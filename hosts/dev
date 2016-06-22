@@ -1,0 +1,2 @@
+[webserver]
+default ansible_ssh_host=ssh-dev ansible_ssh_user=vagrant

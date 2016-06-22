@@ -1,0 +1,21 @@
+---
+- hosts: all
+  sudo: yes
+  vars:
+  tasks:
+
+    - include: host_tasks/default.yml
+      when: '"{{ inventory_hostname }}" == "default"'
+
+    - include: host_tasks/stage.yml
+      when: '"{{ inventory_hostname }}" == "stage"'
+
+    - include: host_tasks/prod.yml
+      when: '"{{ inventory_hostname }}" == "prod"'
+
+  roles:
+    - role: user
+      user_username: dev
+    - core
+    - devel
+

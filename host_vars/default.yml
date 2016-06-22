@@ -1,0 +1,2 @@
+---
+secure_sshd_allow_users: vagrant
