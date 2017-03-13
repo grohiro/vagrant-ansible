@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   
   # VM config
-  config.vm.box = "centos6.4_x86_64"
+  config.vm.box = "centos/7"
 
   config.vm.network :private_network, ip: "192.168.120.02"
 
@@ -29,5 +29,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "site.yml"
   end
-
 end
