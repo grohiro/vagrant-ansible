@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   # VM config
   config.vm.box = "centos/7"
 
-  config.vm.network :private_network, ip: "192.168.120.02"
+  config.vm.network :private_network, ip: "192.168.120.2"
 
   # enable after install httpd
   #config.vm.synced_folder "../webapp", "/var/www/webapp", owner: "apache" ,mount_options: ['dmode=777', 'fmode=666']
