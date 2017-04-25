@@ -23,6 +23,8 @@ Vagrant.configure("2") do |config|
     v.name = "virtual-machine-name"
     v.memory = 512
     v.cpus = 1
+
+    config.vm.synced_folder "./", "/vagrant", type: "nfs"  # type: nfs, rsync
   end
 
   # provisioning
