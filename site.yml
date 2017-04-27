@@ -18,4 +18,5 @@
       user_username: dev
     - core
     - devel
+    - yumrepo
 
