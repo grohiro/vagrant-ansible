@@ -8,14 +8,15 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: "192.168.120.2"
 
-  # enable after install httpd
-  #config.vm.synced_folder "../webapp", "/var/www/webapp", owner: "apache" ,mount_options: ['dmode=777', 'fmode=666']
+  # Shared folders
+  config.vm.synced_folder "./", "/vagrant", type: "nfs"
 
   # Network
   # SSH
   config.vm.network "forwarded_port", id: "ssh", guest: 22, host: 2001
+  # www
   config.vm.network "forwarded_port", guest: 80, host: 8040
-  # MySQL server
+  # MySQL
   #config.vm.network "forwarded_port", guest: 3306, host: 8031
 
   # VirtualBox config
@@ -23,8 +24,6 @@ Vagrant.configure("2") do |config|
     v.name = "virtual-machine-name"
     v.memory = 512
     v.cpus = 1
-
-    config.vm.synced_folder "./", "/vagrant", type: "nfs"  # type: nfs, rsync
   end
 
   # provisioning
