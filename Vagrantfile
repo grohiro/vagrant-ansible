@@ -26,6 +26,9 @@ Vagrant.configure("2") do |config|
     v.cpus = 1
   end
 
+  # Forward SSH agent
+  config.ssh.forward_agent = true
+
   # provisioning
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "site.yml"
